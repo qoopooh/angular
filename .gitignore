@@ -1,2 +1,5 @@
 *.lock
 .git
+
+mysql/data
+mysql/backup/backup*.sql
