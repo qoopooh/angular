@@ -4,6 +4,8 @@ services:
   php:
     build: ./php
     container_name: lemp_php-fpm
+    env_file:
+      - ./php/web-variables.env
     restart: always
     volumes:
       - ./www/:/var/www/html
@@ -34,6 +36,8 @@ services:
       - MYSQL_DATABASE=lemp_db
       - MYSQL_USER=lemp
       - MYSQL_PASSWORD=123456
+    ports:
+      - 3306:3306
 
   pma:
     image: phpmyadmin/phpmyadmin
